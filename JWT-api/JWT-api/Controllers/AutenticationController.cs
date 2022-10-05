@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using static System.Net.WebRequestMethods;
 
 namespace JWT_api.Controllers
 {
@@ -25,7 +26,14 @@ namespace JWT_api.Controllers
         {
             if (request.correo == "arpd@gmail.com" && request.clave == "123456")
             {
-                //string otpCreado = "929737";
+                /*Random rnd = new Random();
+                string otpCreado = "";
+
+                for (int ctr = 1; ctr <= 6; ctr++)
+                {
+                    otpCreado += rnd.Next(10).ToString();
+                }*/
+
                 var keyBytes = Encoding.ASCII.GetBytes(secretKey);
                 var claims = new ClaimsIdentity();
                 claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.correo));
