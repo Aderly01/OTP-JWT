@@ -1,0 +1,8 @@
+POST http://localhost:5168/api/Autentication/Validar HTTP/1.1
+accept: */*
+content-type: application/json
+
+{
+    "correo" : "arpd@gmail.com",
+    "clave" : "123456"
+}
